@@ -12,8 +12,7 @@ export class NavComponent implements OnInit {
   items: any[] = [
     { label: "About", link: "/about" },
     { label: "Portfolio", link: "/portfolio" },
-    { label: "Hire Stefan", link: "/hire" },
-    { label: "Admin", link: "/admin" }
+    { label: "Hire Stefan", link: "/hire" }
   ];
 
   constructor() { }
