@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
+import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
+    CoreModule,
     HomeModule,
     AdminModule
   ],
