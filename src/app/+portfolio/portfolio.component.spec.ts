@@ -1,21 +1,21 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AboutComponent } from './about.component';
+import { PortfolioComponent } from './portfolio.component';
 
-describe('AboutComponent', () => {
-  let component: AboutComponent;
-  let fixture: ComponentFixture<AboutComponent>;
-  let content = "about works!";
-
+describe('PortfolioComponent', () => {
+  let component: PortfolioComponent;
+  let fixture: ComponentFixture<PortfolioComponent>;
+  let content = 'portfolio works!';
+  
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [AboutComponent]
+      declarations: [ PortfolioComponent ]
     })
-      .compileComponents();
+    .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AboutComponent);
+    fixture = TestBed.createComponent(PortfolioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -24,7 +24,7 @@ describe('AboutComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'about works!'`, async () => {
+  it(`should have as title 'portfolio works!'`, async () => {
     const about = fixture.debugElement.componentInstance;
     expect(about.title).toEqual(content);
   });
