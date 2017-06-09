@@ -10,16 +10,16 @@ export class AdminGuard implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let url = state.url;
-    console.log(url);
     return this.checkLogin(url);
   }
 
   checkLogin(url: string): boolean {
+    console.log(this.authService.isLoggedIn);
     if (this.authService.isLoggedIn) { return true; }
 
     this.authService.redirectUrl = url;
-
-    this.router.navigate['/login'];
+    
+    this.router.navigate(['/login']);
     return false;
   }
 }

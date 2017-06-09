@@ -10,9 +10,10 @@ export class NavComponent implements OnInit {
   collapsed: boolean = false;
 
   items: any[] = [
-    {label: "About", link: "/about"},
-    {label: "Portfolio", link: "/portfolio"},
-    {label: "Hire Stefan", link: "/hire"}
+    { label: "About", link: "/about" },
+    { label: "Portfolio", link: "/portfolio" },
+    { label: "Hire Stefan", link: "/hire" },
+    { label: "Admin", link: "/admin" }
   ];
 
   constructor() { }
@@ -20,7 +21,7 @@ export class NavComponent implements OnInit {
   ngOnInit() {
   }
 
-  collapseMenu(){
+  collapseMenu() {
     this.collapsed = !this.collapsed;
   }
 
