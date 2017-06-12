@@ -5,7 +5,7 @@ import { NavComponent } from './nav.component';
 describe('NavComponent', () => {
   let component: NavComponent;
   let fixture: ComponentFixture<NavComponent>;
-  let content = "nav works!";
+  let content = "Stefan Nieuwenhuis";
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -24,13 +24,13 @@ describe('NavComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it(`should have as title 'nav works!'`, async () => {
+  it(`should have as title 'Stefan Nieuwenhuis'`, async () => {
     const home = fixture.debugElement.componentInstance;
     expect(home.title).toEqual(content);
   });
 
-  it('should render title in a p tag', async () => {
+  it('should render title in an a tag', async () => {
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('p').textContent).toContain(content);
+    expect(compiled.querySelector('a').textContent).toContain(content);
   });
 });

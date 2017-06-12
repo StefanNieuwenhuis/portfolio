@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-  title: string = "nav works!";
+  title: string = "Stefan Nieuwenhuis";
   collapsed: boolean = false;
 
   items: any[] = [
