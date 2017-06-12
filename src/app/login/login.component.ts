@@ -9,23 +9,17 @@ import { AuthService } from '../shared/services/auth.service';
 })
 export class LoginComponent implements OnInit {
   title: string = "login works!";
+  isLoggedIn: boolean = false;
 
-  constructor(private authService: AuthService, private router:Router) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+  login() {
+    this.authService.login();
   }
 
-  login(){
-    this.authService.login().subscribe(() => {
-      if(this.authService.isLoggedIn){
-        let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : '/login';
-
-        this.router.navigate([redirect]);
-      }
-    });
-  }
-
-  logout(){
+  logout() {
     this.authService.logout();
   }
 

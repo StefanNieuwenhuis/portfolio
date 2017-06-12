@@ -1,22 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/delay';
+
+
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 
 @Injectable()
 export class AuthService {
   isLoggedIn: boolean = false;
   redirectUrl: string;
 
-  constructor() {}
+  user: Observable<firebase.User>;
 
-  login(): Observable<boolean> { 
-    return Observable.of(true).delay(1000).do(val => this.isLoggedIn = true);
+  constructor(private afAuth: AngularFireAuth) {
+    this.user = afAuth.authState;
   }
 
-  logout(){
-    this.isLoggedIn = false;
+  login() {
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+
+  logout() {
+    this.afAuth.auth.signOut();
   }
 
 }
